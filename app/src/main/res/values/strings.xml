@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">ContactsWithSQLite</string>
+    <string name="scrollViewText">allContactsDisplayed</string>
+    <string name="addNewItem">Add new item</string>
+    <string name="cancel">cancel</string>
+    <string name="save">save</string>
+    <string name="first_name">First Name</string>
+    <string name="last_name">Last Name</string>
+    <string name="phone_number">Phone number</string>
+    <string name="deleteButton">Delete</string>
+</resources>

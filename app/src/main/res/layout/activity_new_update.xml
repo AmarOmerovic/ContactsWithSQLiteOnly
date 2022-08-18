@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#000000"
+        android:backgroundTint="#000000"
+        tools:context=".NewUpdate">
+
+        <Button
+            android:id="@+id/cancelButton"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_margin="10dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginEnd="32dp"
+            android:layout_marginBottom="8dp"
+            android:background="@drawable/icons8_go_back_100"
+            android:contentDescription="@string/app_name"
+            android:textColor="#000000"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/deleteButton"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintHorizontal_chainStyle="packed"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <Button
+            android:id="@+id/deleteButton"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_margin="10dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginBottom="8dp"
+            android:background="@drawable/icons8_remove_100"
+            android:contentDescription="@string/deleteButton"
+            android:textColor="#000000"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/savebutton"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/cancelButton" />
+
+        <Button
+            android:id="@+id/savebutton"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_margin="10dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="24dp"
+            android:layout_marginBottom="8dp"
+            android:background="@drawable/icons8_save_100"
+            android:contentDescription="@string/save"
+            android:textColor="#000000"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/deleteButton" />
+
+        <EditText
+            android:id="@+id/firstNameView"
+            style="@style/textStyleForNewUpdate"
+            android:layout_width="wrap_content"
+            android:layout_height="60dp"
+            android:layout_marginTop="30dp"
+            android:autofillHints=""
+            android:ems="10"
+            android:hint="@string/first_name"
+            android:inputType="textPersonName"
+            android:textColor="#FFFFFF"
+            android:textColorHint="#80FFFFFF"
+            android:textSize="30sp"
+            app:layout_constraintBottom_toTopOf="@+id/lastNameView"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_chainStyle="packed" />
+
+        <EditText
+            android:id="@+id/lastNameView"
+            style="@style/textStyleForNewUpdate"
+            android:layout_width="wrap_content"
+            android:layout_height="60dp"
+            android:layout_marginTop="20dp"
+            android:ems="10"
+            android:hint="@string/last_name"
+            android:importantForAutofill="no"
+            android:inputType="textPersonName"
+            android:textColor="#FFFFFF"
+            android:textColorHint="#80FFFFFF"
+            android:textSize="30sp"
+            app:layout_constraintBottom_toTopOf="@+id/phoneNumberView"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/firstNameView" />
+
+        <EditText
+            android:id="@+id/phoneNumberView"
+            style="@style/textStyleForNewUpdate"
+            android:layout_width="wrap_content"
+            android:layout_height="60dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="80dp"
+            android:autofillHints=""
+            android:ems="10"
+            android:hint="@string/phone_number"
+            android:inputType="phone"
+            android:textColor="#FFFFFF"
+            android:textColorHint="#80FFFFFF"
+            android:textSize="30sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/lastNameView" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

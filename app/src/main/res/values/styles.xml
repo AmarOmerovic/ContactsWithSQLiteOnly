@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="button">
+        <item name="android:layout_width">60dp</item>
+        <item name="android:layout_height">60dp</item>
+        <item name="android:layout_marginEnd">32dp</item>
+        <item name="android:layout_marginBottom">16dp</item>
+        <item name="android:height">50dp</item>
+        <item name="android:background">@drawable/icons8_add_50</item>
+        <item name="android:backgroundTint">#FFFFFF</item>
+        <item name="android:contentDescription">@string/addNewItem</item>
+        <item name="android:drawableTint">#FFFFFF</item>
+        <item name="android:foregroundTint">#FAF8F8</item>
+    </style>
+
+    <style name="textStyleForNewUpdate">
+        <item name="android:layout_width">300dp</item>
+        <item name="android:layout_height">60dp</item>
+        <item name="android:background">#0A0A0A</item>
+        <item name="android:fadingEdge">horizontal</item>
+        <item name="android:gravity">center</item>
+        <item name="android:requiresFadingEdge">horizontal|vertical</item>
+        <item name="android:textAlignment">center</item>
+        <item name="android:textColor">#FFFFFF</item>
+        <item name="android:textColorHint">#FFFFFF</item>
+        <item name="android:textSize">34sp</item>
+    </style>
+
+
+</resources>
