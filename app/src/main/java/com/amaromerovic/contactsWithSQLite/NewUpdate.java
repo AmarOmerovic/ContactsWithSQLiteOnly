@@ -1,7 +1,9 @@
 package com.amaromerovic.contactsWithSQLite;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
+import android.provider.SyncStateContract;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -14,6 +16,7 @@ public class NewUpdate extends AppCompatActivity {
     private Button cancelButton;
     private Button saveButton;
     private Button deleteButton;
+    private Button callButton;
     private EditText firstNameView;
     private EditText lastNameView;
     private EditText phoneNumberView;
@@ -27,6 +30,7 @@ public class NewUpdate extends AppCompatActivity {
         cancelButton = findViewById(R.id.cancelButton);
         saveButton = findViewById(R.id.savebutton);
         deleteButton = findViewById(R.id.deleteButton);
+        callButton = findViewById(R.id.callButton);
         firstNameView = findViewById(R.id.firstNameView);
         lastNameView = findViewById(R.id.lastNameView);
         phoneNumberView = findViewById(R.id.phoneNumberView);
@@ -38,6 +42,7 @@ public class NewUpdate extends AppCompatActivity {
             phoneNumberView.setHint(bundle.getString(Util.PHONE_NUMBER_KEY));
         } else {
             deleteButton.setVisibility(View.GONE);
+            callButton.setVisibility(View.GONE);
         }
 
 
@@ -49,6 +54,12 @@ public class NewUpdate extends AppCompatActivity {
         });
 
 
+        callButton.setOnClickListener(view -> {
+            assert bundle != null;
+            Intent intent = new Intent(Intent.ACTION_DIAL, Uri.parse("tel:" + bundle.getString(Util.PHONE_NUMBER_KEY).trim()));
+            startActivity(intent);
+        });
+
         saveButton.setOnClickListener(view -> {
             if (bundle != null){
                 Intent intent = getIntent();
@@ -57,6 +68,20 @@ public class NewUpdate extends AppCompatActivity {
                 String firstName = firstNameView.getText().toString().trim();
                 String lastName = lastNameView.getText().toString().trim();
                 String phoneNumber = phoneNumberView.getText().toString().trim();
+
+                if (firstName.isEmpty()){
+                    firstName = firstNameView.getHint().toString();
+                }
+
+                if (lastName.isEmpty()){
+                    lastName = lastNameView.getHint().toString();
+                }
+
+                if (phoneNumber.isEmpty()){
+                    phoneNumber = phoneNumberView.getHint().toString();
+                }
+
+
 
                 intent.putExtra(Util.ID_KEY, id);
                 intent.putExtra(Util.FIRST_NAME_KEY, firstName);
@@ -84,6 +109,7 @@ public class NewUpdate extends AppCompatActivity {
 
         deleteButton.setOnClickListener(view -> {
             Intent intent = getIntent();
+            assert bundle != null;
             String id = bundle.getString(Util.ID_KEY);
             intent.putExtra(Util.ID_KEY, id);
             setResult(RESULT_FIRST_USER, intent);

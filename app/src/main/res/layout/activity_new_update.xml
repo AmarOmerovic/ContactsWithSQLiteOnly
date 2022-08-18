@@ -12,12 +12,10 @@
 
         <Button
             android:id="@+id/cancelButton"
-            android:layout_width="80dp"
-            android:layout_height="80dp"
+            android:layout_width="55dp"
+            android:layout_height="55dp"
             android:layout_margin="10dp"
-            android:layout_marginStart="24dp"
-            android:layout_marginEnd="32dp"
-            android:layout_marginBottom="8dp"
+            android:layout_marginBottom="16dp"
             android:background="@drawable/icons8_go_back_100"
             android:contentDescription="@string/app_name"
             android:textColor="#000000"
@@ -31,12 +29,27 @@
 
         <Button
             android:id="@+id/deleteButton"
-            android:layout_width="80dp"
-            android:layout_height="80dp"
+            android:layout_width="55dp"
+            android:layout_height="55dp"
             android:layout_margin="10dp"
-            android:layout_marginStart="16dp"
-            android:layout_marginBottom="8dp"
+            android:layout_marginBottom="16dp"
             android:background="@drawable/icons8_remove_100"
+            android:contentDescription="@string/deleteButton"
+            android:textColor="#000000"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/callButton"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/cancelButton" />
+
+        <Button
+            android:id="@+id/callButton"
+            android:layout_width="55dp"
+            android:layout_height="55dp"
+            android:layout_margin="10dp"
+            android:layout_marginBottom="16dp"
+            android:background="@drawable/icons8_call_100"
             android:contentDescription="@string/deleteButton"
             android:textColor="#000000"
             android:textSize="18sp"
@@ -44,16 +57,14 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/savebutton"
             app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toEndOf="@+id/cancelButton" />
+            app:layout_constraintStart_toEndOf="@+id/deleteButton" />
 
         <Button
             android:id="@+id/savebutton"
-            android:layout_width="80dp"
-            android:layout_height="80dp"
+            android:layout_width="55dp"
+            android:layout_height="55dp"
             android:layout_margin="10dp"
-            android:layout_marginStart="16dp"
-            android:layout_marginEnd="24dp"
-            android:layout_marginBottom="8dp"
+            android:layout_marginBottom="16dp"
             android:background="@drawable/icons8_save_100"
             android:contentDescription="@string/save"
             android:textColor="#000000"
@@ -62,7 +73,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toEndOf="@+id/deleteButton" />
+            app:layout_constraintStart_toEndOf="@+id/callButton" />
 
         <EditText
             android:id="@+id/firstNameView"
